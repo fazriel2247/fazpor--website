@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1f1b16;
+    color: #f4efe6;
+    overflow-x: hidden;
+}
+
+/* Container Utama Full Layar */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Background Bunga + Efek Sepia Gelap */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    /* Link gambar sementara. Jika punya foto sendiri, ganti url(...) dengan 'nama-foto.jpg' */
+    background-image: 
+        linear-gradient(rgba(32, 27, 20, 0.65), rgba(26, 22, 16, 0.75)),
+        url('https://images.unsplash.com/photo-1507290439931-a861b5a38200?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    filter: sepia(45%) contrast(95%);
+    z-index: -1;
+}
+
+/* Blok Teks Tengah */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Nama Mempelai (Font Kaligrafi) */
+.couple-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3.3rem, 7.5vw, 6rem);
+    font-weight: 400;
+    color: #f4efe6;
+    line-height: 1.05;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.35);
+}
+
+/* Subjudul "AKAN MENIKAH" (Font Serif) */
+.subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2vw, 1.45rem);
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: #f4efe6;
+    margin-top: -2px;
+    text-transform: uppercase;
+}
+
+/* Tombol "RSVP DI SINI" (Font Monospace + Border Tipis) */
+.btn-rsvp {
+    display: inline-block;
+    margin-top: 42px;
+    padding: 14px 28px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    color: #f4efe6;
+    text-decoration: none;
+    border: 1px solid rgba(244, 239, 230, 0.75);
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-rsvp:hover {
+    background-color: #f4efe6;
+    color: #241f18;
+    border-color: #f4efe6;
+}
+
+/* Info Tanggal & Lokasi di Sudut Bawah */
+.hero-footer {
+    position: absolute;
+    bottom: 32px;
+    left: 48px;
+    right: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    color: rgba(244, 239, 230, 0.9);
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+/* Penyesuaian Otomatis untuk Layar HP */
+@media (max-width: 768px) {
+    .btn-rsvp {
+        margin-top: 32px;
+        padding: 12px 22px;
+        font-size: 0.72rem;
+    }
+
+    .hero-footer {
+        flex-direction: column;
+        gap: 8px;
+        left: 20px;
+        right: 20px;
+        bottom: 24px;
+        font-size: 0.68rem;
+        text-align: center;
+    }
+}
